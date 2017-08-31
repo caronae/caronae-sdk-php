@@ -16,7 +16,7 @@ class CaronaeService
     private $token;
     private $apiURL;
 
-    public function __construct(string $apiURL = self::PRODUCTION_API_URL, Client $client = null)
+    public function __construct($apiURL = self::PRODUCTION_API_URL, Client $client = null)
     {
         $this->apiURL = $apiURL;
 
@@ -31,7 +31,7 @@ class CaronaeService
         $this->client = $client;
     }
 
-    public function setInstitution(string $institutionID, string $institutionPassword)
+    public function setInstitution($institutionID, $institutionPassword)
     {
         $this->institutionID = $institutionID;
         $this->institutionPassword = $institutionPassword;
@@ -66,7 +66,7 @@ class CaronaeService
         return $this->apiURL . '/login?token=' . $this->token;
     }
 
-    public function redirectUrlForError(string $reason)
+    public function redirectUrlForError($reason)
     {
         return $this->apiURL . '/login?error=' . $reason;
     }
