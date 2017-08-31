@@ -1,0 +1,23 @@
+{
+    "name": "caronae/caronae-sdk-php",
+    "description": "SDK PHP do Caronaê para autenticação de instituições",
+    "type": "library",
+    "license": "GNU GPLv3",
+    "authors": [
+        {
+            "name": "Mario Cecchi",
+            "email": "macecchi@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Caronae\\": "src/"
+        }
+    }
+}
