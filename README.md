@@ -38,7 +38,11 @@ $user = [
 ];
 
 try {
-    $caronae->signUp($user);
+    // O método authorize deve ser chamado somente quando o usuário for
+    // considerado autorizado a usar o Caronaê. O usuário será logado
+    // ou, caso seja seu primeiro acesso, será cadastrado e logado.
+    $caronae->authorize($user);
+    
 } catch (\Exception $e) {
     echo "Ocorreu um erro durante a autenticação. " . $e->getMessage();
     

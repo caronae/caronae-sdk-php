@@ -37,7 +37,7 @@ class CaronaeService
         $this->institutionPassword = $institutionPassword;
     }
 
-    public function signUp($user)
+    public function authorize($user)
     {
         $this->verifyInstitutionWasSet();
 
