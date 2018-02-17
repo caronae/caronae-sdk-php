@@ -1,6 +1,7 @@
 # Caronaê - PHP SDK
 
 [![CircleCI](https://circleci.com/gh/caronae/caronae-sdk-php.svg?style=svg)](https://circleci.com/gh/caronae/caronae-sdk-php)
+[![Latest Stable Version](https://poser.pugx.org/caronae/caronae-sdk-php/v/stable)](https://packagist.org/packages/caronae/caronae-sdk-php)
 
 SDK utilizado para integrar com as instituições,
 permitindo o cadastro e login dos usuários no Caronaê.
