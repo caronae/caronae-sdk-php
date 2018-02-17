@@ -3,7 +3,7 @@
     "description": "SDK PHP do Caronaê para autenticação de instituições",
     "type": "library",
     "version": "1.0.1",
-    "license": "GNU GPLv3",
+    "license": "GPL-3.0-only",
     "authors": [
         {
             "name": "Mario Cecchi",
