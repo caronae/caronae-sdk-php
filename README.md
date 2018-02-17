@@ -70,5 +70,5 @@ Para utilizar o ambiente de testes do Caronaê ou outro ambiente, basta
 inicializar o `CaronaeService` passando a URL base desejada. Exemplo:
 
 ```php
-$caronae = new CaronaeService('https://dev.caronae.com.br');
+$caronae = new CaronaeService('https://api.dev.caronae.org');
 ```

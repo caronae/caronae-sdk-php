@@ -2,6 +2,7 @@
     "name": "caronae/caronae-sdk-php",
     "description": "SDK PHP do Caronaê para autenticação de instituições",
     "type": "library",
+    "version": "1.0.1",
     "license": "GNU GPLv3",
     "authors": [
         {

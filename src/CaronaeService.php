@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class CaronaeService
 {
-    const PRODUCTION_API_URL = "https://api.caronae.com.br";
+    const PRODUCTION_API_URL = "https://api.caronae.org";
 
     private $client;
     private $institutionID;
@@ -42,7 +42,7 @@ class CaronaeService
         $this->verifyInstitutionWasSet();
 
         try {
-            $response = $this->client->post('/users', ['json' => $user, 'auth' => $this->authorization()]);
+            $response = $this->client->post('/api/v1/users', ['json' => $user, 'auth' => $this->authorization()]);
         } catch (RequestException $e) {
             $response = $e->getResponse();
             if (!$this->isResponseValid($response)) {
