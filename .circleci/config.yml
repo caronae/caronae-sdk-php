@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.1-cli
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "composer.json" }}
+          - v1-dependencies-
+      - run:
+          name: Install dependencies
+          command: composer install -n --prefer-dist
+      - save_cache:
+          paths:
+            - ./vendor
+          key: v1-dependencies-{{ checksum "composer.json" }}
+      - run:
+          name: Run tests
+          command: ./vendor/bin/phpunit --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml tests/
+      - deploy:
+          name: Deploy to Packagist
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              curl -XPOST -H"content-type:application/json" "https://packagist.org/api/update-package?username=macecchi&apiToken=$PACKAGIST_API_TOKEN" -d'{"repository":{"url":"https://github.com/caronae/caronae-sdk-php"}}'
+            fi
