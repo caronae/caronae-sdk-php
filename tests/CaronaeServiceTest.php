@@ -1,12 +1,12 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+namespace Caronae\Tests;
 
 use Caronae\CaronaeService;
+use PHPUnit\Framework\TestCase;
 
-class CaronaeServiceTest extends PHPUnit_Framework_TestCase
+class CaronaeServiceTest extends TestCase
 {
-
     public function testCreatesServiceWithoutErrors()
     {
         $service = new CaronaeService();
